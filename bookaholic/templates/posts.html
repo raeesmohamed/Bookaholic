@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% for post in posts %}
+
+<div class="container form-container mt-auto">
+    <img class="rounded-circle " src ="{{url_for('static', filename = 'profile_pics/' + post.author.image)}}">   
+            <a class="text-decoration-none text-success"href="#">{{ post.author.username }}</a>
+            <small class="text-muted">{{ post.date.strftime('%Y-%m-%d')}}</small>
+            <h2><a class="nav-link text-info mb-1" href="{{url_for('post', post_id = post.id)}}">{{ post.title }}</a></h2>
+          <div class="container form-container mt-auto"> <p class="text-white pb-1 ">{{ post.content }}</p></div>   
+</div>
+        
+        
+ {% endfor %}
+{% endblock %}

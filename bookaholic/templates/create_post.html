@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class = 'container form-container '>
+    <div class="form-row mt-auto"><form method = 'POST', action = '' >
+        {{form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom m text-white">{{legend}}</legend>
+            <div class="form-group text-white" >
+                {{form.title.label(class ='form-control-label')}}
+                {% if form.title.errors%}
+                    {{form.title(class ='form-control is-invalid')}}
+                    <div class="invalid-feedback">
+                        {% for error in form.title.errors %}
+                        <span>{{error}}</span>
+                        {% endfor%}
+                    </div>
+                {%else%}      
+                 {{form.title(class ='form-control')}} 
+                {% endif%}
+                
+            </div>
+            <div class="form-group text-white" >
+                {{form.content.label(class ='form-control-label')}}
+                {% if form.content.errors%}
+                    {{form.content(class ='form-control is-invalid')}}
+                    <div class="invalid-feedback">
+                        {% for error in form.content.errors %}
+                        <span>{{error}}</span>
+                        {% endfor%}
+                    </div>
+                {%else%}      
+                 {{form.content(class ='form-control')}} 
+                {% endif%}
+            <div class="form-group mt-3">
+                {{form.submit(class=' btn btn-success')}}
+            </div>
+        </fieldset>
+       
+    </form>
+</div>
+</div>
+{% endblock %}
