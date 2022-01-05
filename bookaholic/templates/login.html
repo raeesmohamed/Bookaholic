@@ -40,9 +40,9 @@
                 <div class="form-group ">
                     {{form.submit(class=' btn btn-success')}}
                 </div>
-                <small class="text-muted">Don't have an account ?<a class='text-decoration-none' href="url_for('index')">Sign up Here</a></small>
+                <small class="text-muted">Don't have an account ?<a class='text-decoration-none' href="url_for('main.index')">Sign up Here</a></small>
             </fieldset>
-            <small class="text-muted"><a class='text-decoration-none 'href="url_for('')">Forgot your password?</a></small>
+            <small class="text-muted"><a class='text-decoration-none 'href="{{url_for('users.reset_request')}}">Forgot your password?</a></small>
         </form>
     </div>
 </div>

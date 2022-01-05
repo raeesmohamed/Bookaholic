@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% for book in books['items'] %}
+<div class="container form-container mt-auto">
+    {% if book.volumeInfo.imageLinks %}
+    <img class='rounded-circle' src="{{book.volumeInfo.imageLinks.smallThumbnail}}">
+    {% else %}
+    <img class="rounded-circle" src = '../static/images/default_book.png'>
+    {% endif %}
+    {% if book.volumeInfo %}
+    <a class=" text-decoration-none text-success"href="{{book.volumeInfo.previewLink}}" target="_blank">{{ book.volumeInfo.title}}</a>
+    <!-- <small class=" text-muted text-decoration-none text-white "href="{{book.volumeInfo.previewLink}}" target="_blank">{{ book.volumeInfo.authors}}</small> -->
+    {% else %}
+    <a class="text-decoration-none text-success" href="" target="_blank">{{book.volumeInfo}}</a>
+    {% endif %}
+    <p class="text-white">{{book.volumeInfo.description}}</p>
+</div>
+{% endfor %}
+{% endblock %}

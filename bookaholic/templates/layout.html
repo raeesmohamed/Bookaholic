@@ -24,29 +24,29 @@
       {% if current_user.is_authenticated %}
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a href="{{url_for('posts')}}" class="nav-link">POSTS</a> 
+          <a href="{{url_for('posts.posts')}}" class="nav-link">POSTS</a> 
         </li>
         <li class="nav-item">
-          <a href="{{url_for('new_post')}}" class="nav-link">NEW POST</a> 
+          <a href="{{url_for('posts.new_post')}}" class="nav-link">NEW POST</a> 
         </li>
         <li class="nav-item">
-          <a href="{{url_for('logout')}}" class="nav-link">LOGOUT</a> 
+          <a href="{{url_for('users.logout')}}" class="nav-link">LOGOUT</a> 
         </li>
         <li class="nav-item">
-          <a href="{{url_for('account')}}" class="nav-link">ACCOUNT</a> 
+          <a href="{{url_for('users.account')}}" class="nav-link">ACCOUNT</a> 
         </li>
       </ul>
      
       {% else %}
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a href="{{url_for('posts')}}" class="nav-link">POSTS</a> 
+          <a href="{{url_for('posts.posts')}}" class="nav-link">POSTS</a> 
         </li>
         <li class="nav-item">
-          <a href="{{url_for('login')}}" class="nav-link">LOG IN</a> 
+          <a href="{{url_for('users.login')}}" class="nav-link">LOG IN</a> 
         </li>
         <li class="nav-item">
-          <a href="{{ url_for('register') }}" class="nav-link">REGISTER</a> 
+          <a href="{{ url_for('users.register') }}" class="nav-link">REGISTER</a> 
         </li>
       </ul>
       {% endif %}
