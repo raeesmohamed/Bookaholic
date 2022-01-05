@@ -9,7 +9,7 @@
             <small class="text-muted">{{ post.date.strftime('%Y-%m-%d')}}</small>
             <h2><a class="nav-link text-info mb-1" href="{{url_for('posts.post', post_id = post.id)}}">{{ post.title }}</a></h2>
           <div class="container form-container mt-auto"> <p class="text-white pb-1 ">{{ post.content }}</p></div>   
-</div>      
+</div>     
 {% endfor %}
 {% for page_num in posts.iter_pages(left_edge =1, left_current = 1,right_edge = 1,right_current = 2) %}
   {% if page_num %}
